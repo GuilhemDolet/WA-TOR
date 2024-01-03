@@ -11,5 +11,5 @@ def generation_grid(nbr_ligne, nbr_column):
 
     for l in ma_grid:
         print(l)
-        
-print(generation_grid(20,10))
+
+# generation_grid(20,10) # exemple d'utilisation de la fonction. Ici, 20 lignes de 10 colonnes.
