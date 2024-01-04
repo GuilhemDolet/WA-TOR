@@ -1,2 +1,2 @@
-LINES = 5
-COLUMNS = 5
+LINES = 3
+COLUMNS = 3

@@ -52,9 +52,34 @@ class Fish:
         case_gauche = self.get_coord("L")
         case_bas = self.get_coord("D")
         case_haut = self.get_coord("U")
+
+
+        # renvoie les coordonnées des cases adjacentes
         return (case_droite, case_gauche, case_bas, case_haut)
 
     def move_randomly(self, grid):
         grid[self.x][self.y] = 0
-        self.x, self.y = random.choice(self.scan_des_cases_voisines())
+        self.x, self.y = random.choice(self.scan_des_cases_voisines_avec_type(grid))
         grid[self.x][self.y] = self.type
+
+    def scan_des_cases_voisines_avec_type(self, grid, type=0): # c'est validé
+        return_variable = []
+
+        case_droite = self.get_coord("R")
+        if grid[case_droite[0]][case_droite[1]] == type:
+            return_variable.append(case_droite)
+
+        case_gauche = self.get_coord("L")
+        if grid[case_gauche[0]][case_gauche[1]] == type:
+            return_variable.append(case_gauche)
+        
+        case_bas = self.get_coord("D")
+        if grid[case_bas[0]][case_bas[1]] == type:
+            return_variable.append(case_bas)
+        
+        case_haut = self.get_coord("U")
+        if grid[case_haut[0]][case_haut[1]] == type:
+            return_variable.append(case_haut)
+        
+        # renvoie les coordonnées des cases qui contiennent des 0
+        return return_variable
