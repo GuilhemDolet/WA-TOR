@@ -14,7 +14,7 @@ affichage_grid(grille_test)
 def scan_des_cases_voisines(x,y):
     # Scan de la case à droite
     if y < nbr_column - 1:
-        case_droite = grille_test[x][(y+1)]
+        case_droite = grille_test.index(x,(y+1))
     else: 
         case_droite = grille_test[x][0]
     #  Scan de la case à gauche
@@ -35,7 +35,9 @@ def scan_des_cases_voisines(x,y):
     
     return case_droite, case_gauche, case_bas, case_haut
 
-print(grille_test[19][0])
-print(scan_des_cases_voisines(19,0))
+print(grille_test[5][5])
+print(scan_des_cases_voisines(5,5))
+
+
 
 
