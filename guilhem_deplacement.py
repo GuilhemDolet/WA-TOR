@@ -2,11 +2,9 @@ from def_grid import generation_grid, affichage_grid
 import random
 import time
 import os
+import constants
 
-nbr_ligne = 10
-nbr_column = 15
-
-grille_test = generation_grid(nbr_ligne,nbr_column)
+grille_test = generation_grid(constants.LINES, constants.COLUMNS)
 
 # variable pour les coordonnées d'un poisson
 x = 5
@@ -61,7 +59,7 @@ while True :
     time.sleep(1)
     os.system("cls")
     grille_test[x][y] = 0
-    if x < nbr_ligne - 1:
+    if x < (constants.LINES - 1):
         x += 1
     else:
         x = 0
