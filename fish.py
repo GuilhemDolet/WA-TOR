@@ -54,17 +54,7 @@ class Fish:
         case_haut = self.get_coord("U")
         return (case_droite, case_gauche, case_bas, case_haut)
 
-    def move_randomly(self):
+    def move_randomly(self, grid):
+        grid[self.x][self.y] = 0
         self.x, self.y = random.choice(self.scan_des_cases_voisines())
-        
-    
-
-fish_1 = Fish(0,0)
-
-print(fish_1.__dict__)
-
-print(fish_1.scan_des_cases_voisines())
-
-fish_1.move_randomly()
-
-print(fish_1.__dict__)
+        grid[self.x][self.y] = self.type
