@@ -1,8 +1,12 @@
 import time
+from fish import *
+
+LINES = 10
+COLUMNS = 10
 
 # génére une grille (support ou arriere plan)
 
-grid = [['0' for _ in range(10)] for _ in range(10)]
+grid = [['0' for _ in range(COLUMNS)] for _ in range(LINES)]
 
 # j'imprime mon monde de départ sans poissons
 
@@ -64,3 +68,4 @@ for i in grid:
     print(i)
 
 print("##################################################")
+
