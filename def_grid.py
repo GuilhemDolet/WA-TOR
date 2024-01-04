@@ -1,5 +1,5 @@
 # la fonction qui permet de générer une grille avec les paramètres nombre de ligne et nombre de colonnes
-
+import random
 
 def generation_grid(nbr_ligne, nbr_column):
     ma_grid = []
