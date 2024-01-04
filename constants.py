@@ -1,2 +1,3 @@
 LINES = 3
 COLUMNS = 3
+G_FISH = 1

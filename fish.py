@@ -12,6 +12,7 @@ class Fish:
         self.x = x
         self.y = y
         self.type = type
+        self.turn_alive = G_FISH
 
     def get_coord(self, direction):
         # Scan de la case à droite
@@ -58,7 +59,11 @@ class Fish:
         return (case_droite, case_gauche, case_bas, case_haut)
 
     def move_randomly(self, grid):
-        grid[self.x][self.y] = 0
+        if self.turn_alive == 1:
+            new_fish = Fish(self.x, self.y)
+            grid[self.x][self.y] = 1
+        else:
+            grid[self.x][self.y] = 0
         self.x, self.y = random.choice(self.scan_des_cases_voisines_avec_type(grid))
         grid[self.x][self.y] = self.type
 
