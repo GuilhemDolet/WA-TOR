@@ -58,8 +58,6 @@ class Fish:
         # renvoie les coordonnées des cases adjacentes
         return (case_droite, case_gauche, case_bas, case_haut)
 
-   
-        
     def move_randomly(self, grid):
         if self.turn_alive > 0:
             self.turn_alive -= 1
