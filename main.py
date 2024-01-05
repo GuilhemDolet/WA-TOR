@@ -54,30 +54,3 @@ while len(fishes) < 26:
     print()
 
 print()
-
-
-# while True:
-#     print()
-#     affichage_grid(grid)
-    
-#     time.sleep(1)
-#     # os.system("cls")
-
-#     before_moving = (fish_1.x, fish_1.y)
-#     fish_1.move_randomly(grid)
-#     after_moving = (fish_1.x, fish_1.y)
-
-#     if before_moving != after_moving and fish_1.turn_alive == 1:
-#         fish_child = Fish(before_moving[0], before_moving[1])
-#         print(f"coordonnées de x --> {fish_child.x}, coordonnées de y --> {fish_child.y}")
-
-#     print(Fish.all_fish_instances)
-#     fish_2.move_randomly(grid)
-#     fish_3.move_randomly(grid)
-#     print(Fish.instance_count)
-
-
- 
-
-
-

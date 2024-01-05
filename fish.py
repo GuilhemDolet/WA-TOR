@@ -8,11 +8,11 @@ affichage_grid(grid)
 
 class Fish:
 
-    def __init__(self, x = 1, y = 1, type = 1):
+    def __init__(self, x = 1, y = 1, type = 1, turn_alive = G_FISH):
         self.x = x
         self.y = y
         self.type = type
-        self.turn_alive = G_FISH
+        self.turn_alive = turn_alive
 
     def get_coord(self, direction):
         # Scan de la case à droite
@@ -61,10 +61,15 @@ class Fish:
    
         
     def move_randomly(self, grid):
-        self.turn_alive -= 1
-        grid[self.x][self.y] = 0
-        self.x, self.y = random.choice(self.scan_des_cases_voisines_avec_type(grid))
-        grid[self.x][self.y] = self.type
+        if self.turn_alive > 0:
+            self.turn_alive -= 1
+        else:
+            self.turn_alive = G_FISH
+
+        if len(self.scan_des_cases_voisines_avec_type(grid)) != 0:
+            grid[self.x][self.y] = 0
+            self.x, self.y = random.choice(self.scan_des_cases_voisines_avec_type(grid))
+            grid[self.x][self.y] = self.type
 
     def scan_des_cases_voisines_avec_type(self, grid, type=0): # c'est validé
         return_variable = []
