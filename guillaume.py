@@ -1,5 +1,8 @@
-import os
 import time
+from fish import *
+
+LINES = 10
+COLUMNS = 10
 
 # génére une grille (support ou arriere plan)
 

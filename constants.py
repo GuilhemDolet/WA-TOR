@@ -1,0 +1,3 @@
+LINES = 5
+COLUMNS = 5
+G_FISH = 3

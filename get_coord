@@ -1,0 +1,38 @@
+from constants import *
+
+def get_coord(x, y, direction):
+    # Scan de la case à droite
+    if y < (COLUMNS - 1):
+        coord_droite = (x, (y + 1))
+    else: 
+        coord_droite = (x, 0)
+    #  Scan de la case à gauche
+    if y > 0:
+        coord_gauche = (x, (y - 1))
+    else: 
+        coord_gauche = (x, (COLUMNS - 1))
+    # Scan de la case en bas
+    if x < (LINES - 1):
+        coord_bas = ((x + 1), y)
+    else: 
+        coord_bas = (0, y)
+    # Scan de la case en haut
+    if x > 0:
+        coord_haut = ((x - 1), y)
+    else: 
+        coord_haut = ((LINES - 1), y)
+
+    if direction == "R":
+        return coord_droite
+    elif direction == "L":
+        return coord_gauche
+    elif direction == "D":
+        return coord_bas
+    elif direction == "U":
+        return coord_haut
+    else:
+        print("Wrong direction")
+    
+
+
+print(get_coord(9,9,"R"))
