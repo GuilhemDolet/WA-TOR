@@ -30,15 +30,17 @@ print("#######")
 
 print(len(fishes))
 
-while len(fishes) < 26:
+while len(fishes) < LINES*COLUMNS:
+    os.system("cls")
+    
 
-    print("Grille avant le tour")
     affichage_grid(grid)
 
     fishes_to_create = []
 
     for fish in fishes:
-        time.sleep(0.2)
+       
+        
         before_moving = (fish.x, fish.y)
         fish.move_randomly(grid)
         after_moving = (fish.x, fish.y)
@@ -46,12 +48,14 @@ while len(fishes) < 26:
         if before_moving != after_moving and fish.turn_alive == 0:
             fishes_to_create.append((before_moving[0], before_moving[1]))
             grid[before_moving[0]][before_moving[1]] = fish.type
-            print(f"Un poisson se crée aux coordonnées {before_moving[0]}, {before_moving[1]}")
+            # print(f"Un poisson se crée aux coordonnées {before_moving[0]}, {before_moving[1]}")
 
     for coord in fishes_to_create:
-        fishes.append(Fish(coord[0], coord[1]))      
-    print(len(fishes))
-    print()
+        fishes.append(Fish(coord[0], coord[1]))  
+    # print(len(fishes))
+    
+    
+    
 
 print()
 
