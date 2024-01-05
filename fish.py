@@ -58,12 +58,11 @@ class Fish:
         # renvoie les coordonnées des cases adjacentes
         return (case_droite, case_gauche, case_bas, case_haut)
 
+   
+        
     def move_randomly(self, grid):
-        if self.turn_alive == 1:
-            new_fish = Fish(self.x, self.y)
-            grid[self.x][self.y] = 1
-        else:
-            grid[self.x][self.y] = 0
+        self.turn_alive -= 1
+        grid[self.x][self.y] = 0
         self.x, self.y = random.choice(self.scan_des_cases_voisines_avec_type(grid))
         grid[self.x][self.y] = self.type
 
